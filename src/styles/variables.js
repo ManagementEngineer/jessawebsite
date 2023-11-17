@@ -14,8 +14,19 @@ const variables = css`
     --white: #e6f1ff;
     --green: #64ffda;
     --green-tint: rgba(100, 255, 218, 0.1);
-    --pink: #f57dff;
+    --pink: #ff0050;
     --blue: #57cbff;
+    --black: #000000;
+    --turqoise: #25f4ee;
+    --red: #FE2C55;
+    --purple: #B026FF;
+    --cyber_dark: #091833;
+    --cyber_blue: #133e7c;
+    --cyber_light: #0abdc6;
+    --cyber_pink: #ea00d9;
+    --cyber_purple: #711c91;
+    --cyber_yellow: #F3E600;
+
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;

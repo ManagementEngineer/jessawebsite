@@ -1,40 +1,36 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'batuigasjessa@outlook.com',
 
   socialMedia: [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/bchiang7',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
-    },
+    // {
+    //   name: 'GitHub',
+    //   url: 'https://github.com/bchiang7',
+    // },
+    // {
+    //   name: 'Instagram',
+    //   url: 'https://www.instagram.com/bchiang7',
+    // },
+    // {
+    //   name: 'Twitter',
+    //   url: 'https://twitter.com/bchiang7',
+    // },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://www.linkedin.com/in/jessabatuigas/',
     },
   ],
 
   navLinks: [
     {
-      name: 'About',
+      name: 'Philosophy',
       url: '/#about',
     },
     {
-      name: 'Experience',
+      name: 'PDP',
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Artifacts',
       url: '/#projects',
     },
     {

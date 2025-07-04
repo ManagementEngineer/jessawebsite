@@ -60,32 +60,42 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
-  const four = (
+  const two = <h2 className="big-heading">Jessa Batuigas.</h2>;
+  const three = (
     <>
-      <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+      {/* <p>
+      I'm a Registered Practical Nurse at {' '}
+      <a href="https://www.uhn.ca/Medicine/About/General_Internal_Medicine" target="_blank" rel="noreferrer">
+           Toronto General Hospital's
         </a>
-        .
+      
+      {' '} General Internal Medicine unit, committed to delivering comprehensive patient care since May 2022. 
+      My role involves collaborating with a diverse healthcare team, conducting thorough assessments, and proficiently managing medical procedures. Prioritizing patient and colleague safety, 
+      I excel in de-escalation techniques and possess the ability to think critically, predicting changes in patient status. Alongside my clinical work, 
+      I contribute to nursing education by precepting students and demonstrate proficiency in Epic Systems documentation.    
+      </p> */}
+      <p>
+      Welcome to my professional hub! I'm a dedicated Registered Practical Nurse passionate about delivering top-notch patient care at the bedside while exploring the world of nursing informatics. My journey is shaped by hands-on experience at <a href="https://www.uhn.ca/Medicine/About/General_Internal_Medicine" target="_blank" rel="noreferrer">
+           Toronto General Hospital
+        </a>, providing comprehensive care to medical and surgical patients, and facilitating smooth transitions in reactivation care at <a href="https://www.nygh.on.ca/RCC" target="_blank" rel="noreferrer">North York General Hospital</a>. 
+      </p>
+      
+      <p>
+      Currently enrolled in George Brown College's <a href="https://www.georgebrown.ca/programs/rpn-bridge-to-bscn-program-postgraduate-s442" target="_blank" rel="noreferrer">RPN to RN Bridging Program</a>, my commitment to ongoing learning and growth is intrinsic to my professional ethos. Driven by evidence-based practice and a fervor for improvement, I invite you to explore my dedication to evidence- based patient care and professional development plan. Thank you for visiting!
       </p>
     </>
   );
-  const five = (
+  const four = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href="/resume.pdf"
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Check out my resume!
     </a>
   );
 
-  const items = [one, two, three, four, five];
+  const items = [one, two, three, four];
 
   return (
     <StyledHeroSection>

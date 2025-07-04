@@ -81,8 +81,8 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
+      // mix-blend-mode: multiply;
+      // filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
@@ -129,19 +129,21 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+      <h2 className="numbered-heading">My Nursing Philosophy</h2>
 
       <div className="inner">
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+            The holistic concept of health extends beyond physicality, encompassing mental and social dimensions. Clients, whether individuals, families, or communities, embody unique characteristics, values, and preferences deserving utmost recognition. Environmental factors span a spectrum from physical landscapes to socio-cultural, economic, and political influences, significantly shaping health outcomes. Nursing, in my perspective, epitomizes a dynamic continuum founded upon empathy, advocacy, and the application of evidence-based practices to advance comprehensive health and recuperation.
+
+            </p>
+            <br />
+            <p>
+            In my conceptualization, nursing encapsulates a comprehensive spectrum of health, acknowledging its intricate blend of physical, mental, and social elements. Central to this framework is the individual, respected for their distinctiveness, values, and choices, set against the backdrop of an environment rife with multifaceted influences – encompassing physical, socio-cultural, economic, and political dimensions – all profoundly impacting health outcomes. My understanding of nursing care revolves around a proactive, compassionate process, grounded in advocacy and evidence-based methodologies, aimed at nurturing holistic well-being and guiding the path towards recuperation.
             </p>
 
-            <p>
+            {/* <p>
               Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
               <a href="https://starry.com/">a start-up</a>,{' '}
@@ -150,23 +152,23 @@ const About = () => {
               main focus these days is building accessible, inclusive products and digital
               experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
               clients.
-            </p>
+            </p> */}
 
-            <p>
+            {/* <p>
               I also recently{' '}
               <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
                 launched a course
               </a>{' '}
               that covers everything you need to build a web app with the Spotify API using Node
               &amp; React.
-            </p>
+            </p> */}
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            {/* <p>Here are a few technologies I’ve been working with recently:</p> */}
           </div>
 
-          <ul className="skills-list">
+          {/* <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
+          </ul> */}
         </StyledText>
 
         <StyledPic>

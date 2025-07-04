@@ -2,11 +2,11 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Ramuel Batuigas',
+    title: 'Jessa Batuigas',
     description:
-      'Ramuel is an Engineering Analyst with over 4 years of work experience in data analysis, business intelligence, software development, technical support, and project execution. Knowledgeable across multiple industries including public service, technology, logistics, manufacturing, and transportation, and equipped with a postgraduate certificate in AI Solutions Development.',
-    siteUrl: 'https://www.ramuel.ca', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
+      'Jessa Batuigas is a dedicated Registered Practical Nurse passionate about delivering top-notch patient care at the bedside while exploring the world of nursing informatics.',
+    siteUrl: 'https://www.jessabatuigas.com', // No trailing slash allowed!
+    image: '/og.PNG', // Path to your image you placed in the 'static' folder
     twitterUsername: '',
   },
   plugins: [
@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Ramuel Batuigas',
-        short_name: 'Ramuel Batuigas',
+        name: 'Jessa Batuigas',
+        short_name: 'Jessa Batuigas',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,

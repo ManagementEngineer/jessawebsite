@@ -1,36 +1,36 @@
 module.exports = {
-  email: 'rjbatuigas@gmail.com',
+  email: 'batuigasjessa@outlook.com',
 
   socialMedia: [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/managementengineer',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/buhawirj',
-    },
+    // {
+    //   name: 'GitHub',
+    //   url: 'https://github.com/bchiang7',
+    // },
+    // {
+    //   name: 'Instagram',
+    //   url: 'https://www.instagram.com/bchiang7',
+    // },
     // {
     //   name: 'Twitter',
     //   url: 'https://twitter.com/bchiang7',
     // },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/rjbatuigas/',
+      url: 'https://www.linkedin.com/in/jessabatuigas/',
     },
   ],
 
   navLinks: [
     {
-      name: 'About',
+      name: 'Philosophy',
       url: '/#about',
     },
     {
-      name: 'Experience',
+      name: 'PDP',
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Artifacts',
       url: '/#projects',
     },
     {
@@ -40,7 +40,7 @@ module.exports = {
   ],
 
   colors: {
-    green: '#00f2ea',
+    green: '#64ffda',
     navy: '#0a192f',
     darkNavy: '#020c1b',
   },

@@ -19,7 +19,7 @@ const StyledHeroSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--cyber_light);
+    color: var(--green);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
@@ -60,29 +60,60 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Ramuel Batuigas.</h2>;
-  const three = <h3 className="big-heading">I make data-driven decisions.</h3>;
-  const four = (
+  const two = <h2 className="big-heading">Jessa Batuigas.</h2>;
+  const three = (
     <>
+      {/* <p>
+      I'm a Registered Practical Nurse at {' '}
+      <a href="https://www.uhn.ca/Medicine/About/General_Internal_Medicine" target="_blank" rel="noreferrer">
+           Toronto General Hospital's
+        </a>
+      
+      {' '} General Internal Medicine unit, committed to delivering comprehensive patient care since May 2022. 
+      My role involves collaborating with a diverse healthcare team, conducting thorough assessments, and proficiently managing medical procedures. Prioritizing patient and colleague safety, 
+      I excel in de-escalation techniques and possess the ability to think critically, predicting changes in patient status. Alongside my clinical work, 
+      I contribute to nursing education by precepting students and demonstrate proficiency in Epic Systems documentation.    
+      </p> */}
       <p>
-      I'm an ex-Amazon and an Engineering Analyst with 4 years of work experience in data analysis, business intelligence, software
-      development, technical support, and project execution. Knowledgeable across multiple industries including
-      public service, technology, logistics, manufacturing, and transportation, and equipped with a postgraduate
-      certificate in AI Solutions Development. 
+        Welcome to my professional hub! I'm a dedicated Registered Practical Nurse passionate about
+        delivering top-notch patient care at the bedside while exploring the world of nursing
+        informatics. My journey is shaped by hands-on experience at{' '}
+        <a
+          href="https://www.uhn.ca/Medicine/About/General_Internal_Medicine"
+          target="_blank"
+          rel="noreferrer">
+          Toronto General Hospital
+        </a>
+        , providing comprehensive care to medical and surgical patients, and facilitating smooth
+        transitions in reactivation care at{' '}
+        <a href="https://www.nygh.on.ca/RCC" target="_blank" rel="noreferrer">
+          North York General Hospital
+        </a>
+        .
+      </p>
+
+      <p>
+        Currently enrolled in George Brown College's{' '}
+        <a
+          href="https://www.georgebrown.ca/programs/rpn-bridge-to-bscn-program-postgraduate-s442"
+          target="_blank"
+          rel="noreferrer">
+          RPN to RN Bridging Program
+        </a>
+        , my commitment to ongoing learning and growth is intrinsic to my professional ethos. Driven
+        by evidence-based practice and a fervor for improvement, I invite you to explore my
+        dedication to evidence- based patient care and professional development plan. Thank you for
+        visiting!
       </p>
     </>
   );
-  const five = (
-    <a
-      className="email-link"
-      href="/resume.pdf"
-      target="_blank"
-      rel="noreferrer">
+  const four = (
+    <a className="email-link" href="/resume.pdf" target="_blank" rel="noreferrer">
       Check out my resume!
     </a>
   );
 
-  const items = [one, two, three, four, five];
+  const items = [one, two, three, four];
 
   return (
     <StyledHeroSection>
@@ -107,4 +138,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

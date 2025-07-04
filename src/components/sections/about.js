@@ -39,7 +39,7 @@ const StyledText = styled.div`
         content: '▹';
         position: absolute;
         left: 0;
-        color: var(--cyber_light);
+        color: var(--green);
         font-size: var(--fz-sm);
         line-height: 12px;
       }
@@ -61,7 +61,7 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--cyber_yellow);
+    background-color: var(--green);
 
     &:hover,
     &:focus {
@@ -81,8 +81,8 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: normal;
-      filter: none;
+      // mix-blend-mode: multiply;
+      // filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
@@ -100,12 +100,12 @@ const StyledPic = styled.div`
     &:before {
       top: 0;
       left: 0;
-      background-color: var(--cyber_dark);
+      background-color: var(--navy);
       mix-blend-mode: screen;
     }
 
     &:after {
-      border: 2px solid var(--cyber_yellow);
+      border: 2px solid var(--green);
       top: 14px;
       left: 14px;
       z-index: -1;
@@ -125,48 +125,62 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['PowerBI', 'Python', 'SQL', 'VBA', 'Pandas', 'Scikit-learn', 'Tensorflow', 'Pytorch'];
-
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+      <h2 className="numbered-heading">My Nursing Philosophy</h2>
 
       <div className="inner">
         <StyledText>
           <div>
             <p>
-            I have a genuine interest in data analysis and engineering. 
-            The blend of my technical skills and passion for using data to make informed decisions naturally brings me to this space. 
-            I find the process of extracting valuable insights and setting up reliable data pipelines not just professionally intriguing but personally captivating. 
-            I'm dedicated to expanding my knowledge in these areas, always exploring new tools and staying updated with industry trends to make meaningful contributions to data-driven initiatives.
+              The holistic concept of health extends beyond physicality, encompassing mental and
+              social dimensions. Clients, whether individuals, families, or communities, embody
+              unique characteristics, values, and preferences deserving utmost recognition.
+              Environmental factors span a spectrum from physical landscapes to socio-cultural,
+              economic, and political influences, significantly shaping health outcomes. Nursing, in
+              my perspective, epitomizes a dynamic continuum founded upon empathy, advocacy, and the
+              application of evidence-based practices to advance comprehensive health and
+              recuperation.
+            </p>
+            <br />
+            <p>
+              In my conceptualization, nursing encapsulates a comprehensive spectrum of health,
+              acknowledging its intricate blend of physical, mental, and social elements. Central to
+              this framework is the individual, respected for their distinctiveness, values, and
+              choices, set against the backdrop of an environment rife with multifaceted influences
+              – encompassing physical, socio-cultural, economic, and political dimensions – all
+              profoundly impacting health outcomes. My understanding of nursing care revolves around
+              a proactive, compassionate process, grounded in advocacy and evidence-based
+              methodologies, aimed at nurturing holistic well-being and guiding the path towards
+              recuperation.
             </p>
 
-            <p>
-              Since my first co-op, and I’ve had the privilege of working at{' '}
-              <a href="https://clearbridgemobile.com//">a mobile app development company</a>,{' '}
-              <a href="https://www.loblaw.ca/">the largest supply chain in Canada</a>,{' '}
-              <a href="https://www.york.ca/">a thriving municipality</a>, {' '}
-              <a href="https://www.toyota.com/usa/operations/">the largest car manufacturer in the world</a>, {' '}
-              <a href="https://www.ttc.ca/">one of the busiest transportation in NA</a>, {' '}
-              <a href="https://www.amazon.com/">a huge company</a>, {' '}
-              and{' '}
-              <a href="https://www.jcelectrofields.biz/AboutUs/CompanyProfile">a company that is dear to me</a>. Currently, my main focus is on enhancing my data analytics and machine learning skills at <a href="https://www.georgebrown.ca/programs/applied-ai-solutions-development-program-postgraduate-t431">George Brown</a> seeking a job at a company that aligns with my strengths.
-            </p>
+            {/* <p>
+              Fast-forward to today, and I’ve had the privilege of working at{' '}
+              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
+              <a href="https://starry.com/">a start-up</a>,{' '}
+              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
+              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
+              main focus these days is building accessible, inclusive products and digital
+              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
+              clients.
+            </p> */}
 
-            <p>
-              I also {' '}
-              <a href="https://www.fantasyleaguelottery.com/">
-                launched a website
+            {/* <p>
+              I also recently{' '}
+              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
+                launched a course
               </a>{' '}
-              that helps fantasy league commissioners to conduct unbiased lotteries for their draft.
-            </p>
+              that covers everything you need to build a web app with the Spotify API using Node
+              &amp; React.
+            </p> */}
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            {/* <p>Here are a few technologies I’ve been working with recently:</p> */}
           </div>
 
-          <ul className="skills-list">
+          {/* <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
+          </ul> */}
         </StyledText>
 
         <StyledPic>

@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { CSSTransition } from 'react-transition-group';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { srConfig } from '@config';
-import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -24,174 +21,7 @@ const StyledJobsSection = styled.section`
   }
 `;
 
-const StyledTabList = styled.div`
-  position: relative;
-  z-index: 3;
-  width: max-content;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  @media (max-width: 600px) {
-    display: flex;
-    overflow-x: auto;
-    width: calc(100% + 100px);
-    padding-left: 50px;
-    margin-left: -50px;
-    margin-bottom: 30px;
-  }
-  @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
-  }
-
-  li {
-    &:first-of-type {
-      @media (max-width: 600px) {
-        margin-left: 50px;
-      }
-      @media (max-width: 480px) {
-        margin-left: 25px;
-      }
-    }
-    &:last-of-type {
-      @media (max-width: 600px) {
-        padding-right: 50px;
-      }
-      @media (max-width: 480px) {
-        padding-right: 25px;
-      }
-    }
-  }
-`;
-
-const StyledTabButton = styled.button`
-  ${({ theme }) => theme.mixins.link};
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: var(--tab-height);
-  padding: 0 20px 2px;
-  border-left: 2px solid var(--lightest-navy);
-  background-color: transparent;
-  color: ${({ isActive }) => (isActive ? 'var(--cyber_yellow)' : 'var(--slate)')};
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
-  text-align: left;
-  white-space: nowrap;
-
-  @media (max-width: 768px) {
-    padding: 0 15px 2px;
-  }
-  @media (max-width: 600px) {
-    ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
-    padding: 0 15px;
-    border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
-    text-align: center;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: var(--light-navy);
-  }
-`;
-
-const StyledHighlight = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 2px;
-  height: var(--tab-height);
-  border-radius: var(--border-radius);
-  background: var(--cyber_light);
-  transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition-delay: 0.1s;
-
-  @media (max-width: 600px) {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
-    margin-left: 50px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
-  }
-`;
-
-const StyledTabPanels = styled.div`
-  position: relative;
-  width: 100%;
-  margin-left: 20px;
-
-  @media (max-width: 600px) {
-    margin-left: 0;
-  }
-`;
-
-const StyledTabPanel = styled.div`
-  width: 100%;
-  height: auto;
-  padding: 10px 5px;
-
-  ul {
-    ${({ theme }) => theme.mixins.fancyList};
-  }
-
-  h3 {
-    margin-bottom: 2px;
-    font-size: var(--fz-xxl);
-    font-weight: 500;
-    line-height: 1.3;
-
-    .company {
-      color: var(--cyber_light);
-    }
-  }
-
-  .range {
-    margin-bottom: 25px;
-    color: var(--light-slate);
-    font-family: var(--font-mono);
-    font-size: var(--fz-xs);
-  }
-`;
-
 const Jobs = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              company
-              location
-              range
-              url
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const jobsData = data.jobs.edges;
-
-  const [activeTabId, setActiveTabId] = useState(0);
-  const [tabFocus, setTabFocus] = useState(null);
-  const tabs = useRef([]);
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -203,51 +33,115 @@ const Jobs = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const focusTab = () => {
-    if (tabs.current[tabFocus]) {
-      tabs.current[tabFocus].focus();
-      return;
-    }
-    // If we're at the end, go to the start
-    if (tabFocus >= tabs.current.length) {
-      setTabFocus(0);
-    }
-    // If we're at the start, move to the end
-    if (tabFocus < 0) {
-      setTabFocus(tabs.current.length - 1);
-    }
-  };
-
-  // Only re-run the effect if tabFocus changes
-  useEffect(() => focusTab(), [tabFocus]);
-
-  // Focus on tabs when using up & down arrow keys
-  const onKeyDown = e => {
-    switch (e.key) {
-      case KEY_CODES.ARROW_UP: {
-        e.preventDefault();
-        setTabFocus(tabFocus - 1);
-        break;
-      }
-
-      case KEY_CODES.ARROW_DOWN: {
-        e.preventDefault();
-        setTabFocus(tabFocus + 1);
-        break;
-      }
-
-      default: {
-        break;
-      }
-    }
-  };
-
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">Professional Development Plan</h2>
 
-      <div className="inner">
-        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
+      <div>
+        <h3 style={{ color: '#F3E600' }}>Goal 1</h3>
+        <p>Complete RPN to RN Bridging Program</p>
+        <br />
+
+        <h4>Objective:</h4>
+
+        <p>Become a Registered Nurse by July 2026.</p>
+
+        <h4>Action Steps:</h4>
+        <ul>
+          <li>
+            Enroll in an accredited RN bridging program by September 2023. – completed September 1,
+            2023
+          </li>
+          <li>
+            Attend classes regularly and actively participate in discussions and practical sessions.
+          </li>
+          <li>Allocate dedicated study time each day to ensure understanding of coursework.</li>
+          <li>
+            Seek assistance from professors or tutors when facing challenges in specific subjects.
+          </li>
+        </ul>
+
+        <h4>Timeline:</h4>
+        <p>Complete the RPN to RN bridging program by June 2026.</p>
+
+        <h3 style={{ color: '#F3E600' }}>Goal 2</h3>
+        <p>Explore interest in Nursing Informatics</p>
+        <br />
+
+        <h4>Objective:</h4>
+
+        <p>
+          Gain practical experience and exposure to nursing informatics principles and practices.
+        </p>
+
+        <h4>Action Steps:</h4>
+        <ul>
+          <li>
+            Pursue internships or part-time positions in healthcare settings that offer exposure to
+            nursing informatics by December 2024.
+          </li>
+          <li>
+            Seek mentorship from RNs or professionals working in nursing informatics to gain
+            insights and guidance.
+          </li>
+          <li>
+            Attend workshops, webinars, and conferences related to nursing informatics to stay
+            updated on industry trends and practices.
+          </li>
+          <li>
+            Volunteer for projects or committees within healthcare institutions focusing on health
+            information technology or informatics.
+          </li>
+        </ul>
+
+        <h4>Timeline:</h4>
+        <p>
+          Obtain a position or internship in nursing informatics by December 2026 after completing
+          the RN bridging program.
+        </p>
+
+        <h3 style={{ color: '#F3E600' }}>Goal 3</h3>
+        <p>Obtain Health Informatics Postgrad Diploma</p>
+        <br />
+
+        <h4>Objective:</h4>
+
+        <p>Enroll in Postgrad Health Informatics program at McMaster University</p>
+
+        <h4>Action Steps:</h4>
+        <ul>
+          <li>Enroll in Health Informatics program by January 2027.</li>
+          <li>
+            Seek mentorship from RNs or professionals working in nursing informatics to gain
+            insights and guidance.
+          </li>
+          <li>
+            Prepare for the certification exam by utilizing study materials, online resources, and
+            practice tests.
+          </li>
+          <li>
+            Engage in self-assessment and continuous learning to fill knowledge gaps and strengthen
+            areas of weakness.
+          </li>
+        </ul>
+
+        <h4>Timeline:</h4>
+        <p>
+          Obtain diploma in Health Informatics by January 2029 after gaining practical experience in
+          the field.
+        </p>
+
+        <h3>Conclusion:</h3>
+        <p>
+          This professional development plan outlines clear and achievable steps for an RPN
+          transitioning to an RN program with a focus on nursing informatics. Regular
+          self-assessment and adjustments to the plan based on progress and changes in career goals
+          are encouraged. Networking with professionals in the field and staying updated on
+          technological advancements will further facilitate growth in Health Informatics.
+        </p>
+        <br />
+
+        {/* <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { company } = node.frontmatter;
@@ -301,7 +195,7 @@ const Jobs = () => {
                 </CSSTransition>
               );
             })}
-        </StyledTabPanels>
+        </StyledTabPanels> */}
       </div>
     </StyledJobsSection>
   );

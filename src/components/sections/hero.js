@@ -17,6 +17,10 @@ const StyledHeroSection = styled.section`
     padding-top: var(--nav-height);
   }
 
+  @media (min-height: 700px) and (max-height: 900px) {
+    padding-top: 20px;
+  }
+
   h1 {
     margin: 0 0 30px 4px;
     color: var(--green);

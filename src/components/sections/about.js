@@ -133,26 +133,31 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              The holistic concept of health extends beyond physicality, encompassing mental and
-              social dimensions. Clients, whether individuals, families, or communities, embody
-              unique characteristics, values, and preferences deserving utmost recognition.
-              Environmental factors span a spectrum from physical landscapes to socio-cultural,
-              economic, and political influences, significantly shaping health outcomes. Nursing, in
-              my perspective, epitomizes a dynamic continuum founded upon empathy, advocacy, and the
-              application of evidence-based practices to advance comprehensive health and
-              recuperation.
+              As a nurse, I believe in providing patient-centered, evidence-based care that honors
+              the dignity and individuality of every person I encounter. I see nursing as both an
+              art and a science, requiring critical thinking, compassion, and advocacy to support
+              patients during their most vulnerable moments.
             </p>
             <br />
             <p>
-              In my conceptualization, nursing encapsulates a comprehensive spectrum of health,
-              acknowledging its intricate blend of physical, mental, and social elements. Central to
-              this framework is the individual, respected for their distinctiveness, values, and
-              choices, set against the backdrop of an environment rife with multifaceted influences
-              – encompassing physical, socio-cultural, economic, and political dimensions – all
-              profoundly impacting health outcomes. My understanding of nursing care revolves around
-              a proactive, compassionate process, grounded in advocacy and evidence-based
-              methodologies, aimed at nurturing holistic well-being and guiding the path towards
-              recuperation.
+              Grounded in a commitment to lifelong learning, I strive to integrate evolving
+              knowledge from nursing informatics and research into my daily practice to improve
+              patient outcomes and system processes. I am passionate about trauma-informed and
+              forensic nursing care, ensuring patients feel seen, heard, and safe while navigating
+              complex healthcare experiences.
+            </p>
+            <br />
+            <p>
+              I value collaboration within the interprofessional team, recognizing that effective
+              communication and teamwork are essential to delivering holistic, high-quality care. I
+              believe that the role of a nurse extends beyond bedside care, encompassing leadership,
+              patient education, and the promotion of equity within healthcare systems.
+            </p>
+            <br />
+            <p>
+              Above all, I am committed to practicing with empathy, integrity, and respect, ensuring
+              that every patient interaction reflects my dedication to supporting healing and
+              preserving human dignity.
             </p>
 
             {/* <p>

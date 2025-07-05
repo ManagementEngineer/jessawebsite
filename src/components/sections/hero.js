@@ -75,16 +75,16 @@ const Hero = () => {
       I contribute to nursing education by precepting students and demonstrate proficiency in Epic Systems documentation.    
       </p> */}
       <p>
-        Welcome to my professional hub! I'm a dedicated Registered Practical Nurse passionate about
-        delivering top-notch patient care at the bedside while exploring the world of nursing
-        informatics. My journey is shaped by hands-on experience at{' '}
+        Welcome to my professional hub. I'm a dedicated Registered Practical Nurse passionate about
+        delivering exceptional patient care while exploring the evolving field of nursing
+        informatics, forensics, and trauma care. My journey includes hands-on experience at{' '}
         <a
           href="https://www.uhn.ca/Medicine/About/General_Internal_Medicine"
           target="_blank"
           rel="noreferrer">
           Toronto General Hospital
         </a>
-        , providing comprehensive care to medical and surgical patients, and facilitating smooth
+        , providing comprehensive care for medical and surgical patients, and supporting smooth
         transitions in reactivation care at{' '}
         <a href="https://www.nygh.on.ca/RCC" target="_blank" rel="noreferrer">
           North York General Hospital
@@ -93,18 +93,19 @@ const Hero = () => {
       </p>
 
       <p>
-        Currently enrolled in George Brown College's{' '}
+        Currently enrolled in the{' '}
         <a
-          href="https://www.georgebrown.ca/programs/rpn-bridge-to-bscn-program-postgraduate-s442"
+          href="https://www.trentu.ca/nursing/programs/undergraduate/rpn-bscn-pathway"
           target="_blank"
           rel="noreferrer">
           RPN to RN Bridging Program
-        </a>
-        , my commitment to ongoing learning and growth is intrinsic to my professional ethos. Driven
-        by evidence-based practice and a fervor for improvement, I invite you to explore my
-        dedication to evidence- based patient care and professional development plan. Thank you for
-        visiting!
+        </a>{' '}
+        at Trent University, I am committed to lifelong learning and evidence-based practice to
+        advance patient outcomes. I invite you to explore my dedication to patient-centered care, my
+        growth as a nurse, and my evolving professional development journey.
       </p>
+
+      <p>Thank you for visiting.</p>
     </>
   );
   const four = (

@@ -60,9 +60,11 @@ const Contact = () => {
       <h2 className="title">Get In Touch</h2>
 
       <p>
-      I'm currently looking for job opportunities in Data Science and Analytics. 
-      If you have any questions or just want to say hi, please reach out! 
-      Let's connect to explore how my unique skill set can contribute to the continued success of your organization.
+        I'm passionate about advancing my nursing career and exploring opportunities in specialized
+        areas including trauma care, forensic nursing, and nursing informatics. If you have any
+        questions or would like to connect, please reach out! Let's explore how my clinical
+        expertise and dedication to evidence-based practice can contribute to enhancing patient care
+        and outcomes in your healthcare organization.
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>
